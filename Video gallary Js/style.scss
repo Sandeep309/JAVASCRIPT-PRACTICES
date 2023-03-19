@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css?family=ABeeZee|Permanent+Marker&display=swap");
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+$bgcolor: rgb(22, 142, 160);
+
+body {
+  background-color: #17a2b8;
+}
+.bg_color {
+  background-color: $bgcolor !important;
+}
+.logo {
+  font-size: 2rem;
+  font-family: "Pacifico", cursive;
+}
+.nav_font {
+  font-family: "Permanent Marker", cursive;
+  font-size: 18px;
+}
+.st_font {
+  font-family: "ABeeZee", sans-serif;
+}
+.cont_st {
+  background-color: $bgcolor !important;
+}
+.c_pointer {
+  cursor: pointer;
+}
+.flex_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.vplayer {
+  position: relative !important;
+}
+.vplayer:hover .P_control {
+  display: block !important;
+}
+.P_control {
+  width: 100%;
+  display: none !important;
+  position: absolute !important;
+  top: 84%;
+}
+
+#progress-bar {
+  background-color: $bgcolor;
+  z-index: 9;
+}

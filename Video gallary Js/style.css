@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css?family=ABeeZee|Permanent+Marker&display=swap");
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #17a2b8;
+}
+
+.bg_color {
+  background-color: #168ea0 !important;
+}
+
+.logo {
+  font-size: 2rem;
+  font-family: "Pacifico", cursive;
+}
+
+.nav_font {
+  font-family: "Permanent Marker", cursive;
+  font-size: 18px;
+}
+
+.st_font {
+  font-family: "ABeeZee", sans-serif;
+}
+
+.cont_st {
+  background-color: #168ea0 !important;
+}
+
+.c_pointer {
+  cursor: pointer;
+}
+
+.flex_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.vplayer {
+  position: relative !important;
+}
+
+.vplayer:hover .P_control {
+  display: block !important;
+}
+
+.P_control {
+  width: 100%;
+  display: none !important;
+  position: absolute !important;
+  top: 84%;
+}
+
+#progress-bar {
+  background-color: #168ea0;
+  z-index: 9;
+}
+/*# sourceMappingURL=style.css.map */

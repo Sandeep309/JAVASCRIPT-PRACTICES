@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- links -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.css">
+
+    <title>Video gallary</title>
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+    <header class="container-fliud shadow">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info">
+            <a class="navbar-brand font-weight-bold text-white logo" href="#">Videos</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto ml-5">
+                    <li class="nav-item">
+                        <a class="nav-link nav_font c_pointer active hvr-grow" id="anime_bar"
+                            onclick="anime_list()">Animated</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav_font c_pointer hvr-grow" id="holly_bar"
+                            onclick="holly_list()">Hollywood</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav_font c_pointer hvr-grow" id="bolly_bar"
+                            onclick="bolly_list()">Bollywood</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+                    Video player using JavaScript
+                </span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container-fluid p-1">
+        <div class="row">
+            <!-- VIDEO PLAYER -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                <div class="conatiner vplayer">
+                    <video class="img-fluid rounded" id="player" src="http://127.0.0.1:5500/v/v003.mp4" type="video/mp4"
+                        width="100%" height="100%" autoplay>
+                    </video>
+                    <!-- CONTROLS -->
+                    <div class="P_control container shadow">
+                        <div class="tt">
+                            <span class="text-right text-light videoTitle "></span>
+                        </div>
+
+                        <div class="d-flex justify-content-start align-items-center">
+                            <button class="btn btn-lg rounded-circle hvr-icon-grow" onclick="prvbtn()" title="prev">
+                                <i class="fas fa-step-backward text-light hvr-icon"></i>
+                            </button>
+
+                            <button type="button" class="btn btn-lg rounded-circle hvr-icon-grow" onclick="playVid()"
+                                title="play/pause">
+                                <i class="fas fa-play text-light hvr-icon" id="pl"></i>
+                                <i class="fas fa-pause text-light hvr-icon" id="ps" style="display: none;"></i>
+                            </button>
+
+                            <button class="btn btn-lg rounded-circle hvr-icon-grow" onclick="nxtbtn()" title="next">
+                                <i class="fas fa-step-forward text-light hvr-icon"></i>
+                            </button>
+
+                            <div class="progress w-75">
+                                <div class="progress-bar" id='progress-bar' role="progressbar" aria-valuenow="0"
+                                    aria-valuemin="0" aria-valuemax="100">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO PLAYLIST -->
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+
+                <!-- ANIMATION PLAYLIST -->
+                <ul class="list-group h-50 anime_list animated fadeInRight" id="anime">
+                    <li class="list-group-item list-group-item-action active st_font bg_color border-0">
+                        Up Next...
+                    </li>
+
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow flex_box"
+                        onclick="showName()">
+                        <video class="img-thumbnail" height="200" width="200" title="a001">
+                            <source src=" v/a001.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">angry birds blues 01</h5>
+                    </li>
+
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow flex_box">
+                        <video class="img-thumbnail" height="200" width="200" title="a002">
+                            <source src="v/a002.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">angry birds blues 02</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow flex_box">
+                        <video class="img-thumbnail" height="200" width="200" title="a003">
+                            <source src="v/a003.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">angry birds blues 03</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow flex_box">
+                        <video class="img-thumbnail" height="200" width="200" title="a001">
+                            <source src="v/a001.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">angry birds blues 04</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow flex_box">
+                        <video class="img-thumbnail" height="200" width="200" title="a002">
+                            <source src="v/a002.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">angry birds blues 05</h5>
+                    </li>
+                </ul>
+
+                <!-- HOLYWOOD PLAYLIST -->
+                <ul class="list-group h-50 anime_list animated fadeInRight" style="display: none;" id="holly">
+                    <li class="list-group-item list-group-item-action active st_font bg_color border-0">
+                        Up Next...
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/h001.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Hollywood 01</h5>
+                    </li>
+
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/h002.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Hollywood 02</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/h003.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Hollywood 03</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock bg_color border-0 shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/h004.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Hollywood 04</h5>
+                    </li>
+                </ul>
+
+                <!-- BOLLYWOOD PLAYLIST -->
+                <ul class="list-group h-50 bolly_list animated fadeInRight" style="display: none;" id="bolly">
+                    <li class="list-group-item list-group-item-action active st_font bg_color border-0">
+                        Up Next...
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock border-0 bg_color shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/b001.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Bollywood 01</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock border-0 bg_color shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/b002.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Bollywood 02</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock border-0 bg_color shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/b003.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Bollywood 03</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock border-0 bg_color shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/b004.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Bollywood 04</h5>
+                    </li>
+                    <li class="list-group-item list-group-item-action pBlock border-0 bg_color shadow">
+                        <video class="img-thumbnail" height="200" width="200">
+                            <source src="v/b005.mp4">
+                        </video>
+                        <h5 class="text-capitalize vText">Bollywood 05</h5>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
